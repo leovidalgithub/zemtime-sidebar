@@ -1,0 +1,148 @@
+<div id="sidebar-wrapper" ng-class="{'toggled' : toggleSidebarStatus}">
+  <ul class="sidebar-nav">
+
+    <div class="sidebar-brand">
+      <!--Logo-->
+      <li>
+        <a class="logo" ui-sref="dashboard" title="{{'sidebar.dashboard' | i18next}}">
+                    <img src="/assets/img/zemsania_cut.png">
+                </a>
+      </li>
+      <!--User name-->
+      <li class="top-separator">
+        <a ui-sref="userProfile" title="{{'sidebar.userProfile' | i18next}}">{{username.name + ' ' + username.surname}}</a>
+      </li>
+    </div>
+    <div class="sidebar-mobile">
+      <!--Hamburger menu icon-->
+      <div class="menuIconWrapper">
+        <i class="menuIcon mdi mdi-menu"></i>
+      </div>
+
+      <!--List Items menu-->
+      <li ui-sref-active="link-active">
+        <div ui-sref="dashboard">
+          <a><i class="mdi mdi-bell-outline"></i></a>
+          <a class="item">{{'sidebar.notifications' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active">
+        <div ui-sref="imputeHours">
+          <a><i class="mdi mdi-timelapse"></i></a>
+          <a class="item" ui-sref="imputeHours">{{'sidebar.timeCalendar' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active">
+        <div ui-sref="holidayCalendar">
+          <a><i class="mdi mdi-calendar-check"></i></a>
+          <a class="item">{{'sidebar.vacationCalendar' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active">
+        <div ui-sref="userSpents">
+          <a><i class="mdi mdi-currency-usd"></i></a>
+          <a class="item">{{'sidebar.imputeSpents' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active" role-auth="{'only' : ['administrator', 'manager']}">
+        <div ui-sref="calendars" ng-click="changeState('calendars')">
+          <a><i class="mdi mdi-calendar-range"></i></a>
+          <a class="item">{{'sidebar.calendars' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active" role-auth="{'only' : ['administrator', 'manager']}">
+        <div ui-sref="workloadSchemes">
+          <a><i class="mdi mdi-clock"></i></a>
+          <a class="item">{{'sidebar.workloadSchemes' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active" role-auth="{'only' : ['administrator', 'manager']}">
+        <div ui-sref="approvalHours">
+          <a><i class="mdi mdi-checkbox-marked-outline"></i></a>
+          <a class="item">{{'sidebar.approvalHours' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active" role-auth="{'only' : ['administrator', 'manager']}">
+        <div ui-sref="projectTimesheets">
+          <a><i class="mdi mdi-playlist-check"></i></a>
+          <a class="item">{{'sidebar.projectTimesheets' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active">
+        <div ui-sref="userAbsences">
+          <a><i class="mdi mdi-plus-outline"></i></a>
+          <a class="item">{{'sidebar.imputeAbsences' | i18next}}</a>
+        </div>
+      </li>
+      <li ui-sref-active="link-active" role-auth="{'only' : ['administrator']}">
+        <div ui-sref="employeeManager" ng-click="changeState('employeeManager')">
+          <a><i class="mdi mdi-account-box-outline"></i></a>
+          <a class="item">{{'sidebar.employeeManager' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active" role-auth="{'only' : ['administrator', 'manager']}">
+        <div ui-sref="projectAssign">
+          <a><i class="mdi mdi-playlist-plus"></i></a>
+          <a class="item">{{'sidebar.projectAssign' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active" role-auth="{'only' : ['administrator', 'manager']}">
+        <div ui-sref="calendarImputeHoursValidator">
+          <a><i class="mdi mdi-history"></i></a>
+          <a class="item">{{'sidebar.timeManager' | i18next}}</a>
+        </div>
+      </li>
+      <li ui-sref-active="link-active" role-auth="{'only' : ['administrator', 'manager']}">
+        <div ui-sref="moderateHolidayCalendar">
+          <a><i class="mdi mdi-airplane-takeoff"></i></a>
+          <a class="item">{{'sidebar.vacationManager' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active" role-auth="{'only' : ['administrator', 'manager']}">
+        <div ui-sref="userSpentsByID">
+          <a><i class="mdi mdi-trending-up"></i></a>
+          <a class="item">{{'sidebar.moderateSpents' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active" role-auth="{'only' : ['administrator', 'manager']}">
+        <div ui-sref="userAbsencesByID">
+          <a><i class="mdi mdi-plus-box-outline"></i></a>
+          <a class="item">{{'sidebar.moderateAbsences' | i18next}}</a>
+        </div>
+      </li>
+
+      <li ui-sref-active="link-active" role-auth="{'only' : ['administrator', 'manager']}">
+        <div ui-sref="comboSelectorExport">
+          <a><i class="mdi mdi-grid"></i></a>
+          <a class="item">{{'sidebar.exportFiles' | i18next}}</a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="http://jira.zemsania.com:8080/secure/RapidBoard.jspa?projectKey=ZTIME&rapidView=4&view=planning.nodetail" target="_blank"><i class="mdi mdi-bug"></i></a>
+          <a href="#" class="item">Reportar Bug</a>
+        </div>
+      </li>
+      <li class="bottom">
+        <div ng-click="changeState('logout')">
+          <a><i class="mdi mdi-logout-variant"></i></a>
+          <a class="item">{{'actions.logout' | i18next}}</a>
+        </div>
+      </li>
+
+    </div>
+    <br>
+  </ul>
+</div>

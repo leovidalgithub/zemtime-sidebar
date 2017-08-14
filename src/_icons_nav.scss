@@ -1,0 +1,102 @@
+// ICONS FONT -->
+	@font-face {
+	  font-family: "Material Design Icons";
+	  src: url("./fonts/materialdesignicons-webfont.eot");
+	  src: url("./fonts/materialdesignicons-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/materialdesignicons-webfont.woff2") format("woff2"), url("./fonts/materialdesignicons-webfont.woff") format("woff"), url("./fonts/materialdesignicons-webfont.ttf") format("truetype"), url("./fonts/materialdesignicons-webfont.svg#materialdesigniconsregular") format("svg");
+	  font-weight: normal;
+	  font-style: normal;
+	}
+
+	// Class working for all browsers
+	// Icons usage: <i class="mdi mdi-name-class-icon></i>
+	.mdi:before,
+	.mdi-set {
+	  display: inline-block;
+	  font: normal normal normal 24px/1 "Material Design Icons";
+	  font-size: inherit;
+	  text-rendering: auto;
+	  line-height: inherit;
+	  -webkit-font-smoothing: antialiased;
+	  -moz-osx-font-smoothing: grayscale;
+	}
+
+	// ICONS SLIDEBAR NAV
+	    // Usuario
+	        .mdi-account:before {
+	          content: "\F004";
+	        }
+	    // Notificaciones
+	        .mdi-bell-outline:before {
+	          content: "\F09C";
+	        }
+	        .mdi-bell-ring-outline:before {
+	          content: "\F09F";
+	        }
+	    // Imputar horas
+	        .mdi-timelapse:before {
+	          content: "\F51A";
+	        }
+	    // Calendario vacaciones
+	        .mdi-calendar-check:before {
+	          content: "\F0EF";
+	        }
+	    // Listado de gastos
+	        .mdi-currency-usd:before {
+	          content: "\F1B3";
+	        }
+	    // Calendarios
+	        .mdi-calendar-range:before {
+	          content: "\F678";
+	        }
+	    // Horarios
+	        .mdi-clock:before {
+	          content: "\F150";
+	        }
+	    // Aprobación del gestor
+	        .mdi-checkbox-marked-outline:before {
+	          content: "\F135";
+	        }
+	    // Aprobación proyectos
+	        .mdi-playlist-check:before {
+	          content: "\F5C7";
+	        }
+	    // Registrar ausencia
+	        .mdi-plus-outline:before {
+	            content: "\F704";
+	        }
+	    // Gestionar empleados
+	        .mdi-account-box-outline:before {
+	          content: "\F007";
+	        }
+	    // Asignar proyectos
+	        .mdi-playlist-plus:before {
+	          content: "\F412";
+	        }
+	    // Revisar horas
+	        .mdi-history:before {
+	          content: "\F2DA";
+	        }
+	    // Revisar vacaciones
+	        .mdi-airplane-takeoff:before {
+	          content: "\F5D5";
+	        }
+	    // Gestión de gastos
+	        .mdi-trending-up:before {
+	          content: "\F535";
+	        }
+	    // Gestión de ausencias
+	        .mdi-plus-box-outline:before {
+	          content: "\F703";
+	        }
+	    // Exportación de tablas
+	        .mdi-grid:before {
+	          content: "\F2C1";
+	        }
+	    // Reportar bug
+	        .mdi-bug:before {
+	          content: "\F0E4";
+	        }
+	    // Cerrar sesión
+	        .mdi-logout-variant:before {
+	          content: "\F5FD";
+	        }
