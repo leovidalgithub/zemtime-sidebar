@@ -1,6 +1,6 @@
 {
   "name": "zemtime-sidebar",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Zemtime Sidebar Component",
   "main": "dist/index.js",
   "scripts": {
