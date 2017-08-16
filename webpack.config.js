@@ -26,7 +26,7 @@ const config = {
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?name=node_modules/zemtime-sidebar/dist/[hash].[ext]'
+        loader: ['url-loader']
       }
     ]
   },
