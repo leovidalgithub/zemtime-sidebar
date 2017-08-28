@@ -1,0 +1,46 @@
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+
+        <div class="sidebar-brand">
+            <!--Logo-->
+            <li>
+                <a class="logo" ui-sref="dashboard" title="{{'sidebar.dashboard' | i18next}}">
+                    <img src="img/zemsania_cut.png">
+                </a>
+            </li>
+            <!--User name-->
+            <li class="top-separator">
+                <a ui-sref="userProfile"  title="{{'sidebar.userProfile' | i18next}}">{{username.name + ' ' + username.surname}}</a>
+            </li>
+        </div>
+        <div class="sidebar-mobile">
+            <!--Hamburger menu icon-->
+            <div class="menuIconWrapper">
+                    <i class="menuIcon mdi mdi-menu"></i>
+            </div>
+
+            <li ng-repeat="item in menu" ui-sref-active="link-active" role-auth="item.roleAuth">
+                <div ui-sref="{{ item.url }}">
+                    <a><i class="mdi" ng-class="item.icon"></i></a>
+                    <a class="item">{{ item.title | i18next }}</a>
+                </div>
+            </li>
+
+            <li>
+                <div>
+                    <a ng-href="{{ bugReportUrl }}" target="_blank"><i class="mdi mdi-bug"></i></a>
+                    <a ng-href="{{ bugReportUrl }}" class="item" target="_blank">Reportar Bug</a>
+                </div>
+            </li>
+
+            <li class="bottom">
+                <div ng-click="changeState('logout')">
+                    <a><i class="mdi mdi-logout-variant"></i></a>
+                    <a class="item">{{'actions.logout' | i18next}}</a>
+                </div>
+            </li>
+
+        </div>
+        <br>
+    </ul>
+</div>
