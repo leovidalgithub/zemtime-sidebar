@@ -1,8 +1,7 @@
 (function () {
   'use strict';
 
-  require('./_icons_nav.scss')
-  require('./_sidebar.scss')
+  require('./sass/comp-sidebar.scss')
 
   var templateFile = require('./template.html')
 
@@ -30,72 +29,129 @@
     $timeout(function(){
         // SIDEBAR RESPONSIVE FUNCTIONALITY
 
-        // Uses jquery
-        var menu = $("#sidebar-wrapper");
-        var nav = $(".sidebar-nav");
-        var bottom = $(".bottom");
-        var menuItem = $(".sidebar-nav li");
-        var itemList = $(".item");
-        var userName = $(".top-separator");
-        var menuIconWrapper = $(".menuIconWrapper");
-        var menuIcon = $(".menuIcon");
-        var mask = $("#mask");
+        // VARIABLES
+            // General wrappers
+            var menu = $("#comp-sb-sidebar-wrapper");
+            var nav = $(".comp-sb-sidebar-nav");
+            var brand = $(".comp-sb-sidebar-brand");
 
-        // On window load
-        var viewportWidthLoad = $(window).width();
-        if ( viewportWidthLoad < 768) {
-            menuIcon.click(menuOpen);
-            menuItem.click(menuClose);
-            mask.click(menuClose);
-        }
+            // Menu items
+            var menuItem = $(".comp-sb-sidebar-nav li:not(.menuIconWrapper)");
+            var itemList = $(".item");
+            var bottom = $(".bottom");
 
-        // On window resize
-        $(window).resize(function() {
-            var viewportWidthResize = $(window).width();
-            if(viewportWidthResize < 768){
-                menuIcon.fadeIn().click(menuOpen);
-                menuItem.click(menuClose);
-                mask.removeClass('dsp-block').click(menuClose);
-                itemList.fadeOut();
-                userName.removeClass('mar-l-10');
-                menu.removeClass('wid-230');
-                nav.removeClass('wid-230');
-                bottom.removeClass('wid-230');
-            }else if(viewportWidthResize >= 768){
-                menuIconWrapper.fadeOut();
-                mask.fadeOut();
-                itemList.fadeIn();
+            // User name
+            var userName = $(".comp-sb-top-separator");
+
+            // Hamburguer menu & mask
+            var menuIconWrapper = $(".menuIconWrapper");
+            var menuIcon = $(".menuIcon");
+            var menuText = $(".menuText");
+            var mask = $("#comp-sb-mask");
+
+        // HAMBURGUER ICON
+            // Open and close menu using the hamburguer button
+            // It opens or closes depending on isOpen boolean variable
+            var isOpen = false
+            menuIconWrapper.click(function () {
+                if (!isOpen) {
+                    openMenu();
+                    isOpen = true;
+                } else {
+                    closeMenu();
+                    isOpen = false;
+                }
+            });
+
+        // MASK
+            // Mask appears when menu is opened using the hamburguer button.
+            // Then you can click mask and it'll close the menu.
+            // So mask is a secondary way to close menu and also provides focus on sidebar
+            mask.click(function () {
+                if (isOpen) {
+            		closeMenu();
+                    isOpen = false;
+                }
+            });
+
+        // ITEMS LIST
+            // Close menu, if open, by clicking them
+            itemList.click(function () {
+                if (isOpen) {
+            		closeMenu();
+                    isOpen = false;
+                }
+            });
+
+        // MEDIA QUERIES
+            var tabletBp = window.matchMedia('screen and (min-width: 769px)');
+
+            function changeSize(tabletBp){
+                if (tabletBp.matches) {
+                        userName.removeClass('mar-l-10');
+                        itemList.removeClass('mar-l-0');
+                		menuText.removeClass('mar-l-0')
+                        bottom.removeClass('wid-230');
+                        menu.removeClass('wid-230');
+                        nav.removeClass('wid-230');
+                        mask.removeClass('dsp-block');
+
+                        itemList.attr('style','');
+                        // itemList.fadeIn(300)
+                        isOpen = false;
+                } else {
+                    brTest();
+                }
             }
-        });
+
+            // IE adding sidebar-brand padding-top
+            // --> *correct onResize should not have padding-top
+            var browsers = ["Trident", "MSIE", "Edge"];
+            var ua =  navigator.userAgent;
+
+            function brTest(){
+                for (var i = 0; i < browsers.length; i++) {
+                    if (ua.search(browsers[i]) !== -1) {
+                        brand.css('padding-top', '8px');
+                    }
+                }
+            }
+
+            // Always watching for changes
+            tabletBp.addListener(changeSize);
+            changeSize(tabletBp);
 
         // FUNCTIONS
-        // Open menu & mask and disappear menuIcon
-        function menuOpen(){
-            userName.addClass('mar-l-10');
-            bottom.addClass('wid-230');
-            menu.addClass('wid-230');
-            nav.addClass('wid-230');
-            mask.addClass('dsp-block');
-            menuIcon.fadeOut();
+            // Open menu & mask
+            function openMenu(){
+                bottom.addClass('wid-230')
+                menu.addClass('wid-230')
+                nav.addClass('wid-230')
 
-            $timeout(function(){
-                console.log(itemList)
-                itemList.fadeIn(600);
-            }, 600);
-        }
-        // Close menu & mask and show menuIcon
-        function menuClose(){
-            itemList.fadeOut(50);
-            $timeout(function(){
-                userName.removeClass('mar-l-10');
-                // itemList.removeClass('mar-l-0');
-                bottom.removeClass('wid-230');
-                menu.removeClass('wid-230');
-                nav.removeClass('wid-230');
-                mask.removeClass('dsp-block');
-                menuIcon.fadeIn();
-            }, 50);
-        }
+                setTimeout(function(){
+                    itemList.fadeIn(300)
+                    menuText.fadeIn(300)
+                    itemList.addClass('mar-l-0')
+                    menuText.addClass('mar-l-0')
+                    userName.addClass('mar-l-10')
+                    mask.addClass('dsp-block')
+                }, 300);
+
+            }
+
+            // Close menu & mask
+            function closeMenu(){
+                itemList.fadeOut(50);
+                setTimeout(function(){
+                    userName.removeClass('mar-l-10');
+                    itemList.removeClass('mar-l-0');
+            		menuText.removeClass('mar-l-0')
+                    bottom.removeClass('wid-230');
+                    menu.removeClass('wid-230');
+                    nav.removeClass('wid-230');
+                    mask.removeClass('dsp-block');
+                }, 50);
+            }
     })
   }
 

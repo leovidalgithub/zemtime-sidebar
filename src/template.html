@@ -1,7 +1,7 @@
-<div id="sidebar-wrapper">
-    <ul class="sidebar-nav">
+<div id="comp-sb-sidebar-wrapper">
+    <ul class="comp-sb-sidebar-nav">
 
-        <div class="sidebar-brand">
+        <div class="comp-sb-sidebar-brand">
             <!--Logo-->
             <li>
                 <a class="logo" ui-sref="dashboard" title="{{'sidebar.dashboard' | i18next}}">
@@ -9,15 +9,20 @@
                 </a>
             </li>
             <!--User name-->
-            <li class="top-separator">
+            <li class="comp-sb-top-separator">
                 <a ui-sref="userProfile"  title="{{'sidebar.userProfile' | i18next}}">{{username.name + ' ' + username.surname}}</a>
             </li>
         </div>
-        <div class="sidebar-mobile">
+        <div class="comp-sb-sidebar-mobile">
             <!--Hamburger menu icon-->
-            <div class="menuIconWrapper">
+            <!-- <div class="menuIconWrapper">
                     <i class="menuIcon mdi mdi-menu"></i>
-            </div>
+            </div> -->
+
+            <li class="menuIconWrapper">
+                <a href="#"><i class="menuIcon mdi mdi-menu"></i></a>
+                <a href="#" class="menuText">Cerrar Menu</a>
+            </li>
 
             <li ng-repeat="item in menu" ui-sref-active="link-active" role-auth="item.roleAuth">
                 <div ui-sref="{{ item.url }}">

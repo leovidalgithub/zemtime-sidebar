@@ -1,0 +1,56 @@
+// *************************************************** //
+	// @MEDIA, APP COLORS, INCLUDING ELEMENTS COLORS
+// *************************************************** //
+
+
+// MEDIA QUERIES
+// *************
+	// Mobile First
+		$sm-phone: "(min-width: 319px)";
+		$phone: "(min-width: 479px)";
+		$lg-phone: "(min-width: 544px)";
+		$tablet: "(min-width: 769px)";
+		$desktop: "(min-width: 1023px)";
+		$lg-desktop: "(min-width: 1200px)";
+
+	// Desktop First
+		$d-sm-phone: "(max-width: 320px)";
+		$d-phone: "(max-width: 480px)";
+		$d-lg-phone: "(max-width: 545px)";
+		$d-tablet: "(max-width: 770px)";
+		$d-desktop: "(max-width: 1024px)";
+		$d-lg-desktop: "(max-width: 1999px)";
+
+	// Orientation
+		$portrait: "(orientation: portrait)";
+		$landscape: "(orientation: landscape)";
+
+// COLORS
+// *************
+	// BASE COLORS APP
+		$col-zemsania: #f57c00; // Corporative Orange
+
+	// GREYSCALE
+		$col-black: #252525;
+		$col-grey-10: lighten($col-black, 10%);
+		$col-grey-20: lighten($col-black, 20%);
+		$col-grey-40: lighten($col-black, 40%);
+		$col-grey-60: lighten($col-black, 60%);
+		$col-grey-80: lighten($col-black, 80%);
+		// $col-smookeWhite: #f4f4f4; // Soft Grey (bg)
+		$col-smookeWhite: rgb(245,245,245); // Soft Grey (bg)
+
+	// BUTTONS
+		$col-btn-base: #FF9800;
+		$col-btn-base-off: #9e9e9e;
+		$col-btn-act-neg: #F44336;
+		$col-btn-act-pos: #4CAF50;
+		$col-btn-act-blu: #2196F3;
+		$col-btn-transp: rgba(255,255,255,0);
+
+	// GENERAL
+		$col-red: #F44336;
+		$col-green: #4CAF50;
+		$col-blue: #2196F3;
+		$col-yellow: #FFEE58;
+		$col-orange: #FF9800;
