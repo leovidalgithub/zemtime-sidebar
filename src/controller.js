@@ -97,7 +97,6 @@
                         mask.removeClass('dsp-block');
 
                         itemList.attr('style','');
-                        // itemList.fadeIn(300)
                         isOpen = false;
                 } else {
                     brTest();
