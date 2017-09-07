@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  require('./sass/comp-sidebar.scss')
+  require('./sass/comp-sidebar.scss');
 
-  var templateFile = require('./template.html')
+  var templateFile = require('./template.html');
 
   angular
     .module('zemtime-sidebar', [])
@@ -36,7 +36,6 @@
             var brand = $(".comp-sb-sidebar-brand");
 
             // Menu items
-            var menuItem = $(".comp-sb-sidebar-nav li:not(.menuIconWrapper)");
             var itemList = $(".item");
             var bottom = $(".bottom");
 
@@ -45,7 +44,6 @@
 
             // Hamburguer menu & mask
             var menuIconWrapper = $(".menuIconWrapper");
-            var menuIcon = $(".menuIcon");
             var menuText = $(".menuText");
             var mask = $("#comp-sb-mask");
 
@@ -86,11 +84,12 @@
         // MEDIA QUERIES
             var tabletBp = window.matchMedia('screen and (min-width: 769px)');
 
+            // If window reach tabletBp breakpoint reset all properties
             function changeSize(tabletBp){
                 if (tabletBp.matches) {
                         userName.removeClass('mar-l-10');
                         itemList.removeClass('mar-l-0');
-                		menuText.removeClass('mar-l-0')
+                		menuText.removeClass('mar-l-0');
                         bottom.removeClass('wid-230');
                         menu.removeClass('wid-230');
                         nav.removeClass('wid-230');
@@ -123,19 +122,18 @@
         // FUNCTIONS
             // Open menu & mask
             function openMenu(){
-                bottom.addClass('wid-230')
-                menu.addClass('wid-230')
-                nav.addClass('wid-230')
+                bottom.addClass('wid-230');
+                menu.addClass('wid-230');
+                nav.addClass('wid-230');
 
                 setTimeout(function(){
-                    itemList.fadeIn(300)
-                    menuText.fadeIn(300)
-                    itemList.addClass('mar-l-0')
-                    menuText.addClass('mar-l-0')
-                    userName.addClass('mar-l-10')
-                    mask.addClass('dsp-block')
+                    itemList.fadeIn(300);
+                    menuText.fadeIn(300);
+                    itemList.addClass('mar-l-0');
+                    menuText.addClass('mar-l-0');
+                    userName.addClass('mar-l-10');
+                    mask.addClass('dsp-block');
                 }, 300);
-
             }
 
             // Close menu & mask
@@ -144,7 +142,7 @@
                 setTimeout(function(){
                     userName.removeClass('mar-l-10');
                     itemList.removeClass('mar-l-0');
-            		menuText.removeClass('mar-l-0')
+            		menuText.removeClass('mar-l-0');
                     bottom.removeClass('wid-230');
                     menu.removeClass('wid-230');
                     nav.removeClass('wid-230');

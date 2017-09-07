@@ -5,7 +5,7 @@
             <!--Logo-->
             <li>
                 <a class="logo" ui-sref="dashboard" title="{{'sidebar.dashboard' | i18next}}">
-                    <img src="img/zemsania_cut.png">
+                    <img src="img/zemsania_cut.png" alt="Zemsania Logo">
                 </a>
             </li>
             <!--User name-->
@@ -20,27 +20,27 @@
             </div> -->
 
             <li class="menuIconWrapper">
-                <a href="#"><i class="menuIcon mdi mdi-menu"></i></a>
+                <a href="#"><em class="menuIcon mdi mdi-menu"></em></a>
                 <a href="#" class="menuText">Cerrar Menu</a>
             </li>
 
             <li ng-repeat="item in menu" ui-sref-active="link-active" role-auth="item.roleAuth">
                 <div ui-sref="{{ item.url }}">
-                    <a><i class="mdi" ng-class="item.icon"></i></a>
+                    <a><em class="mdi" ng-class="item.icon"></em></a>
                     <a class="item">{{ item.title | i18next }}</a>
                 </div>
             </li>
 
             <li>
                 <div>
-                    <a ng-href="{{ bugReportUrl }}" target="_blank"><i class="mdi mdi-bug"></i></a>
+                    <a ng-href="{{ bugReportUrl }}" target="_blank"><em class="mdi mdi-bug"></em></a>
                     <a ng-href="{{ bugReportUrl }}" class="item" target="_blank">Reportar Bug</a>
                 </div>
             </li>
 
             <li class="bottom">
                 <div ng-click="changeState('logout')">
-                    <a><i class="mdi mdi-logout-variant"></i></a>
+                    <a><em class="mdi mdi-logout-variant"></em></a>
                     <a class="item">{{'actions.logout' | i18next}}</a>
                 </div>
             </li>

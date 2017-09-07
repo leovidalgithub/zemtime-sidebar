@@ -2,7 +2,7 @@
 @import "variables";
 
 // RESET
-	*{
+	html *{
 	  margin: 0;
 	  padding: 0;
 	  box-sizing: border-box;
@@ -29,7 +29,6 @@
 		left: 0;
 		top: 0;
 	    z-index: 9999;
-		background-color: #fff;
 	    transition: all .6s;
 	    background-color: $col-smookeWhite;
 		letter-spacing: .03em;
@@ -43,7 +42,6 @@
 			height: 100%;
 			width: 50px;
 			overflow: hidden;
-			background-color: #fff;
 	        transition: all .6s;
 			background-color: $col-smookeWhite;
 			padding-bottom: 45px;
@@ -190,7 +188,7 @@
 						transition: all .3s;
 	                    font-size: 1.3em;
 						background-color: darken($col-smookeWhite, 5%);
-	                    color: rgba(0, 0, 0, 0.54);
+	                    color: rgba(0, 0, 0, .54);
 
 						@media #{$tablet}{
 						   background-color: $col-smookeWhite;
@@ -216,7 +214,7 @@
 							margin-right: 10px;
 						}
 					}
-	                a[class*="item"]{
+	                a[class*='item']{
 						margin-left: -231px;
 						display: none;
 
@@ -227,7 +225,7 @@
 	                }
 
 				}
-				/*SIIDEBAR BOTTOM*/
+				// SIIDEBAR BOTTOM
 				.bottom{
 					padding-left: 6px;
 					width: 50px;
@@ -281,9 +279,6 @@
 	            // MENU ICON
 	            .menuIconWrapper{
 	                background-color: $col-smookeWhite !important;
-
-	                // background-color: $col-grey-10 !important;
-					display: block;
 					display: flex;
 					flex-flow: row wrap;
 					align-items: center;
@@ -301,12 +296,9 @@
 					}
 					i{
 						background-color: $col-smookeWhite !important;
-						// background-color: $col-grey-10;
 					}
 					&:hover{
 						background-color: $col-smookeWhite !important;
-
-						// background-color: $col-grey-10 !important;
 
 						border: 0;
 						border-top: 1px solid #f4f4f4;
@@ -329,10 +321,10 @@
 
 		// General classes for media applying
 		.mar-l-0{margin-left: 0 !important;}
-		.mar-l-10{margin-left: 10px !important}
-		.mar-l-neg{margin-left: -251px}
+		.mar-l-10{margin-left: 10px !important;}
+		.mar-l-neg{margin-left: -251px;}
 		.dsp-block{display: block !important;}
-		.dsp-none{display: none}
+		.dsp-none{display: none;}
 		.wid-230{width: 230px !important;}
 
 	} // close wrapper
