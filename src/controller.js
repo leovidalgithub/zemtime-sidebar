@@ -31,7 +31,7 @@
 
         // VARIABLES
             // General wrappers
-            var menu = $("#comp-sb-sidebar-wrapper");
+            var menu = $(".comp-sb-sidebar-wrapper");
             var nav = $(".comp-sb-sidebar-nav");
             var brand = $(".comp-sb-sidebar-brand");
 
@@ -43,8 +43,8 @@
             var userName = $(".comp-sb-top-separator");
 
             // Hamburguer menu & mask
-            var menuIconWrapper = $(".menuIconWrapper");
-            var menuText = $(".menuText");
+            var menuIconWrapper = $(".menu-icon-wrapper");
+            var menuText = $(".menu-text");
             var mask = $("#comp-sb-mask");
 
         // HAMBURGUER ICON
