@@ -1,0 +1,58 @@
+<div class="comp-sb-sidebar-wrapper" [ngClass]="{wid230 : opened}">
+  <ul class="comp-sb-sidebar-nav" [ngClass]="{wid230 : opened}">
+
+    <div class="comp-sb-sidebar-brand">
+      <!--Logo-->
+      <!--todo dynamic title attr-->
+      <li>
+        <a class="logo" [routerLink]="dashboard" title="sidebar.dashboard">
+          <img src="app/ia-comp-sidebar-light/img/zemsania_cut.png" alt="Zemsania Logo">
+        </a>
+      </li>
+      <!--User name-->
+      <li class="comp-sb-top-separator" [ngClass]="{marl15 : opened}">
+        <!--todo username => {{username.name + ' ' + username.surname}} -->
+        <a [routerLink]="userProfile" title="sidebar.dashboard">Username</a>
+      </li>
+    </div>
+
+
+    <div class="comp-sb-sidebar-mobile">
+      <!--Hamburger menu icon-->
+      <li class="menu-icon-wrapper" (click)="openMenu()">
+        <a [routerLink]=""><em class="menuIcon mdi mdi-menu"></em></a>
+        <a [routerLink]="" class="menu-text" [ngClass]="{marl3 : opened}">Cerrar Menu</a>
+      </li>
+
+      <!--todo generar role auth-->
+      <!-- Iterates object array dataCompSidebar and creates each list element with its attributes -->
+      <li *ngFor="let item of dataCompSidebar" [routerLinkActive]="['link-active']">
+        <div [routerLink]="item.url" (click)="openFalse()">
+          <a><em class="mdi" [ngClass]="item.icon"></em></a>
+          <a class="item" [ngClass]="{marl0 : opened}">{{ item.title }}</a>
+        </div>
+      </li>
+
+      <li>
+        <div (click)="openFalse()">
+          <a href="{{ bugReportUrl }}" target="_blank"><em class="mdi mdi-bug"></em></a>
+          <a href="{{ bugReportUrl }}" class="item" target="_blank" [ngClass]="{marl0 : opened}">Reportar Bug</a>
+        </div>
+      </li>
+
+      <!-- Fixed Close Session button on the bottom -->
+      <li class="bottom" [ngClass]="{wid230 : opened}">
+        <div (click)="changeState('logout')" >
+          <a><em class="mdi mdi-logout-variant"></em></a>
+          <a class="item" [ngClass]="{marl0 : opened}">Cerrar sesión</a>
+        </div>
+      </li>
+
+    </div>
+    <br>
+  </ul>
+</div>
+<!-- mask appears when menu is open. It closes menu -->
+<div class="comp-sb-mask" [ngClass]="{showMask : opened}" (click)="openFalse()"></div>
+
+
