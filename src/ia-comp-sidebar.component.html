@@ -3,16 +3,14 @@
 
     <div class="comp-sb-sidebar-brand">
       <!--Logo-->
-      <!--todo dynamic title attr-->
       <li>
-        <a class="logo" [routerLink]="dashboard" title="sidebar.dashboard">
-          <img src="app/ia-comp-sidebar-light/img/zemsania_cut.png" alt="Zemsania Logo">
+        <a class="logo" [routerLink]="sidebarHead.logoLink" title="sidebar.dashboard">
+          <img src="{{ image }}" alt="Zemsania Logo">
         </a>
       </li>
       <!--User name-->
       <li class="comp-sb-top-separator" [ngClass]="{marl15 : opened}">
-        <!--todo username => {{username.name + ' ' + username.surname}} -->
-        <a [routerLink]="userProfile" title="sidebar.dashboard">Username</a>
+        <a [routerLink]="sidebarHead.userLink">{{ sidebarHead.userName }}</a>
       </li>
     </div>
 

@@ -5,17 +5,22 @@ import {Component, HostListener, Input, OnInit} from '@angular/core';
   templateUrl: './ia-comp-sidebar.component.html',
   styleUrls: ['./ia-comp-sidebar.component.scss']
 })
-export class IaCompSidebarComponentLight implements OnInit {
+export class IaCompSidebarComponent implements OnInit {
 
   // Ready to receive info from its parent via Input
-  @Input() dataCompSidebar: any;
+    // Sidebar Head data
+    @Input() sidebarHead: any;
+    // Sidebar Navigation List data
+    @Input() dataCompSidebar: any;
 
   // Variable that changes when menu is opened(true) or not(false)
-  opened:boolean;
+  opened: boolean;
+    image;
 
   constructor(){
     // Set menu opened default to false
     this.opened = false;
+    this.image = require('../img/zemsania_cut.png');
   }
 
   // Toggle opened value

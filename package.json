@@ -1,6 +1,6 @@
 {
   "name": "ia-comp-sidebar",
-  "version": "2.0.2",
+  "version": "2.0.11",
   "description": "Zemtime Sidebar Component",
   "main": "dist/index.umd.js",
   "scripts": {
