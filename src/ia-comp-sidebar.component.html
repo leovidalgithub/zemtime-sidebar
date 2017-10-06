@@ -4,13 +4,13 @@
     <div class="comp-sb-sidebar-brand">
       <!--Logo-->
       <li>
-        <a class="logo" [routerLink]="sidebarHead.logoLink" title="sidebar.dashboard">
+        <a class="logo" [routerLink]="generalData.logoLink" title="sidebar.dashboard">
           <img src="{{ image }}" alt="Zemsania Logo">
         </a>
       </li>
       <!--User name-->
       <li class="comp-sb-top-separator" [ngClass]="{marl15 : opened}">
-        <a [routerLink]="sidebarHead.userLink">{{ sidebarHead.userName }}</a>
+        <a [routerLink]="generalData.userLink">{{ generalData.userName }}</a>
       </li>
     </div>
 
@@ -19,30 +19,30 @@
       <!--Hamburger menu icon-->
       <li class="menu-icon-wrapper" (click)="openMenu()">
         <a [routerLink]=""><em class="menuIcon mdi mdi-menu"></em></a>
-        <a [routerLink]="" class="menu-text" [ngClass]="{marl3 : opened}">Cerrar Menu</a>
+        <a [routerLink]="" class="menu-text" [ngClass]="{marl3 : opened}">{{ generalData.closeMenu | async }}</a>
       </li>
 
       <!--todo generar role auth-->
-      <!-- Iterates object array dataCompSidebar and creates each list element with its attributes -->
-      <li *ngFor="let item of dataCompSidebar" [routerLinkActive]="['link-active']">
+      <!-- Iterates object array itemsData and creates each list element with its attributes -->
+      <li *ngFor="let item of itemsData" [routerLinkActive]="['link-active']">
         <div [routerLink]="item.url" (click)="openFalse()">
           <a><em class="mdi" [ngClass]="item.icon"></em></a>
-          <a class="item" [ngClass]="{marl0 : opened}">{{ item.title }}</a>
+          <a class="item" [ngClass]="{marl0 : opened}">{{ item.title | async }}</a>
         </div>
       </li>
 
       <li>
         <div (click)="openFalse()">
           <a href="{{ bugReportUrl }}" target="_blank"><em class="mdi mdi-bug"></em></a>
-          <a href="{{ bugReportUrl }}" class="item" target="_blank" [ngClass]="{marl0 : opened}">Reportar Bug</a>
+          <a href="{{ bugReportUrl }}" class="item" target="_blank" [ngClass]="{marl0 : opened}">{{ generalData.reportBug | async }}</a>
         </div>
       </li>
 
       <!-- Fixed Close Session button on the bottom -->
       <li class="bottom" [ngClass]="{wid230 : opened}">
-        <div (click)="changeState('logout')" >
+        <div (click)="changeState('logout')">
           <a><em class="mdi mdi-logout-variant"></em></a>
-          <a class="item" [ngClass]="{marl0 : opened}">Cerrar sesión</a>
+          <a class="item" [ngClass]="{marl0 : opened}">{{ generalData.signOut | async }}</a>
         </div>
       </li>
 

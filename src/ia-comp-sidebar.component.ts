@@ -1,4 +1,4 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ia-comp-sidebar',
@@ -7,34 +7,30 @@ import {Component, HostListener, Input, OnInit} from '@angular/core';
 })
 export class IaCompSidebarComponent implements OnInit {
 
-  // Ready to receive info from its parent via Input
-    // Sidebar Head data
-    @Input() sidebarHead: any;
-    // Sidebar Navigation List data
-    @Input() dataCompSidebar: any;
+  @Input() generalData: string;
+  @Input() itemsData: string;
 
-  // Variable that changes when menu is opened(true) or not(false)
-  opened: boolean;
-    image;
+  private opened: boolean; // Variable that changes when menu is opened(true) or not(false)
+  private image;
 
-  constructor(){
+  constructor() {
     // Set menu opened default to false
     this.opened = false;
     this.image = require('../img/zemsania_cut.png');
   }
 
   // Toggle opened value
-  openMenu(){
+  openMenu() {
     this.opened = !this.opened;
   }
   // Equal opened to false
-  openFalse(){
+  openFalse() {
     this.opened = false;
   }
 
   // Check if there is a window resize. When it is wider than media query $tablet(768px) turn opened to false
   @HostListener('window:resize', ['$event'])
-  onResize(event){
+  onResize(event) {
     let windowSize: number = event.target.innerWidth;
     if (windowSize > 768)
       this.opened = false;
