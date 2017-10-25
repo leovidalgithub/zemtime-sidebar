@@ -18,7 +18,9 @@
     <div class="comp-sb-sidebar-mobile">
       <!--Hamburger menu icon-->
       <li class="menu-icon-wrapper" (click)="openMenu()">
-        <a [routerLink]=""><em class="menuIcon mdi mdi-menu"></em></a>
+        <a [routerLink]="">
+          <em class="menuIcon mdi mdi-menu"></em>
+        </a>
         <a [routerLink]="" class="menu-text" [ngClass]="{marl3 : opened}">{{ generalData.closeMenu | async }}</a>
       </li>
 
@@ -26,14 +28,18 @@
       <!-- Iterates object array itemsData and creates each list element with its attributes -->
       <li *ngFor="let item of itemsData" [routerLinkActive]="['link-active']">
         <div [routerLink]="item.url" (click)="openFalse()">
-          <a><em class="mdi" [ngClass]="item.icon"></em></a>
+          <a>
+            <em class="mdi" [ngClass]="item.icon"></em>
+          </a>
           <a class="item" [ngClass]="{marl0 : opened}">{{ item.title | async }}</a>
         </div>
       </li>
 
       <li>
         <div (click)="openFalse()">
-          <a href="{{ bugReportUrl }}" target="_blank"><em class="mdi mdi-bug"></em></a>
+          <a href="{{ bugReportUrl }}" target="_blank">
+            <em class="mdi mdi-bug"></em>
+          </a>
           <a href="{{ bugReportUrl }}" class="item" target="_blank" [ngClass]="{marl0 : opened}">{{ generalData.reportBug | async }}</a>
         </div>
       </li>
@@ -41,7 +47,9 @@
       <!-- Fixed Close Session button on the bottom -->
       <li class="bottom" [ngClass]="{wid230 : opened}">
         <div (click)="changeState('logout')">
-          <a><em class="mdi mdi-logout-variant"></em></a>
+          <a>
+            <em class="mdi mdi-logout-variant"></em>
+          </a>
           <a class="item" [ngClass]="{marl0 : opened}">{{ generalData.signOut | async }}</a>
         </div>
       </li>
@@ -52,5 +60,3 @@
 </div>
 <!-- mask appears when menu is open. It closes menu -->
 <div class="comp-sb-mask" [ngClass]="{showMask : opened}" (click)="openFalse()"></div>
-
-
