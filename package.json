@@ -1,6 +1,6 @@
 {
   "name": "ia-comp-sidebar",
-  "version": "2.1.20",
+  "version": "2.1.25",
   "description": "Zemtime Sidebar Component",
   "main": "dist/index.umd.js",
   "scripts": {
@@ -12,8 +12,8 @@
     "url": "git@gitlab.zemsania.com:IA/ia-comp-sidebar.git"
   },
   "author": {
-    "name": "Pol Bas",
-    "email": "pbas@zemsania.com"
+    "name": "Leo Rdgz-Vidal",
+    "email": "leo@leovidal.es"
   },
   "peerDependencies": {
     "@angular/common": "^4.0.0",

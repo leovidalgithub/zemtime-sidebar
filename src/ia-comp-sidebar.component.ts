@@ -17,7 +17,7 @@ export class IaCompSidebarComponent implements OnInit {
   constructor() {
     // Set menu opened default to false
     this.opened = false;
-    // this.image = require('../img/zemsania_cut.png');
+    this.image = require('./../img/zemsania_cut.png');
   }
 
   // Toggle opened value
